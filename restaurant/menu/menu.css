@@ -1,12 +1,12 @@
 :root {
-  --primary-color: #3498db; /* آبی اصلی جدید */
-  --secondary-color: #ffffff; /* سفید */
-  --accent-color: #2980b9; /* آبی تیره‌تر برای تاکید */
-  --background-color: #ecf6ff; /* پس‌زمینه آبی بسیار روشن */
-  --text-color: #2c3e50; /* آبی تیره‌تر برای متن */
+  --primary-color: #3498db;
+  --secondary-color: #ffffff;
+  --accent-color: #2980b9;
+  --background-color: #ecf6ff;
+  --text-color: #2c3e50;
   --header-font-size: 2.5em;
   --section-title-font-size: 2em;
-  --price-color: #1f618d; /* آبی تیره برای قیمت‌ها */
+  --price-color: #1f618d;
 }
 
 body {
