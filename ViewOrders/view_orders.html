@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمایش سفارشات</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="vieworders.css">
+</head>
+<body>
+    <div class="orders-container">
+        <header class="header">
+            <h1>سفارشات مشتریان</h1>
+        </header>
+        <table id="ordersTable">
+            <thead>
+                <tr>
+                    <th>نام</th>
+                    <th>شماره تلفن</th>
+                    <th>آدرس</th>
+                    <th>جزئیات سفارش</th>
+                    <th>تاریخ سفارش</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('fetch_orders.php')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('#ordersTable tbody');
+                    data.forEach(order => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${order.name}</td>
+                            <td>${order.phone}</td>
+                            <td>${order.address}</td>
+                            <td>${order.order_details}</td>
+                            <td>${order.order_date}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
